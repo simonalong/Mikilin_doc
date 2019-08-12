@@ -31,7 +31,7 @@ public @interface FieldWhiteMatcher {
      * 可用的值对应的类型
      * @return 对应的枚举类型
      */
-    FieldType type() default FieldType.DEFAULT;
+    FieldModel model() default FieldModel.DEFAULT;
 
     /**
      * 枚举类型的判断

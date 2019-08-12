@@ -13,7 +13,7 @@
 
 - group：分组，默认为\"\_default\_\"，该字段主要是在使用注解`@FieldWhiteMatchers`和`@FieldBlackMatchers`时候使用
 - value：值列表
-- type：既定的类型：身份证，手机号，固定电话，IP地址，邮箱
+- model：既定的模式：身份证，手机号，固定电话，IP地址，邮箱
 - enumType：枚举类型，可以设置对应的枚举，属性只有为String才识别
 - range：范围类型，支持数值类型的范围：[a,b],[a,b),(a,b],(a,b),[a,null),(a,null],
 - condition：java条件表达式，可以支持Java的所有运算符和所有返回值为`Boolean`的表达式，是一个小型表达式语言，两个占位符：`#root`（属性所在对象），`#current`（当前属性）。以及`java.lang.Math`中的所有函数，比如：`min(#root.num1, #root.num2) > #current`

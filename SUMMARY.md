@@ -7,7 +7,7 @@
     * [三种注解](usageCls/threeAnno.md)
 * [​二、匹配器](matcher/README.md)
     * [values](matcher/values.md)
-    * [type](matcher/type.md)
+    * [model](matcher/model.md)
     * [enumType](matcher/enumType.md)
     * [range](matcher/range.md)
     * [condition](matcher/condition.md)

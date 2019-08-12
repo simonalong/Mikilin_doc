@@ -1,4 +1,4 @@
-# type
+# model
 该属性一般用于修饰String类型的数据，表示命中系统内置的几种类型（目前系统内置了简单的几种）：
 
 ```text
@@ -8,10 +8,10 @@
 使用方式比如：
 
 ```java
-@FieldWhiteMatcher(type = FieldType.FIXED_PHONE)
+@FieldWhiteMatcher(model = FieldType.FIXED_PHONE)
 private String fixedPhone;
 
-@FieldBlackMatcher(type = FieldType.FIXED_PHONE)
+@FieldBlackMatcher(model = FieldType.FIXED_PHONE)
 private String fixedPhoneInValid;
 ```
 

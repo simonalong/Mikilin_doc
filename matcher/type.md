@@ -19,7 +19,7 @@ public class TypeEntity {
 }
 ```
 
-对于其中属性obj，该属性可以填写Integer.class，也可以填写Float.class，但是如果填写其他的则就会被拒绝掉，就像Long.class也是会被拒绝，而对于num，则Long.class是会接受的。对应的测试如下
+对于其中属性obj，该属性可以填写Integer.class，也可以填写Float.class，但是如果填写其他的则就会被拒绝掉，就像Long.class也是会被拒绝，而对于num，则Long.class是会接受的，因为该属性接受一切数字类型。对应的测试如下
 ```groovy
 def "测试不明写类继承关系1"() {
     given:

@@ -13,6 +13,7 @@
     * [condition](matcher/condition.md)
     * [regex](matcher/regex.md)
     * [judge](matcher/judge.md)
+    * [type](matcher/type.md)
     * [disable](matcher/disable.md)
 * [三、使用](usage/README.md)
     * [基本黑白名单匹配](usage/baseBlackWhite.md)

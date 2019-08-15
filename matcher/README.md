@@ -3,13 +3,6 @@
 这里是将注解的属性作为匹配器，只要配置了这个属性，那么就相当于启用了这个匹配器，匹配器可以有多个，只要匹配上任何一个，那么就算匹配上。注解 `@FieldWhiteMatcher` 或者`@FieldBlackMatcher`中的属性进行用法介绍。
 
 ```java
-/**
- * 属性白名单匹配器
- * 修饰基本的属性（Boolean Byte Character Short Integer Long Double Float）、String和java.util.Date类型，属性的所有可用的值
- *
- * @author zhouzhenyong
- * @since 2019/3/7 下午9:47
- */
 @Repeatable(FieldWhiteMatchers.class)
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
@@ -95,6 +88,11 @@ public @interface FieldWhiteMatcher {
      * @return 调用的核查的类和函数对应的表达式，比如："com.xxx.AEntity#isValid"，其中#后面是方法，方法返回boolean或者包装类，第一个入参为当前Field对应的类型或者子类，第二个入参为属性对应的对象
      */
     String judge() default "";
+
+    /**
+     * 匹配属性为对应的类型，比如Integer.class，Long.class等等
+     */
+    Class<?>[] type() default {};
 
     /**
      * 是否启用核查

@@ -18,7 +18,8 @@
 - range：范围类型，支持数值类型的范围：[a,b],[a,b),(a,b],(a,b),[a,null),(a,null],
 - condition：java条件表达式，可以支持Java的所有运算符和所有返回值为`Boolean`的表达式，是一个小型表达式语言，两个占位符：`#root`（属性所在对象），`#current`（当前属性）。以及`java.lang.Math`中的所有函数，比如：`min(#root.num1, #root.num2) > #current`
 - regex：正则表达式
-- judge：属性外部配置，可设置自定义的核查逻辑
+- judge：调用的核查的类和函数对应的表达式，比如："com.xxx.AEntity#isValid"，其中#后面是方法，方法返回boolean或者包装类，第一个入参为当前Field对应的类型或者子类，第二个入参为属性对应的对象
+- type：匹配属性为对应的类型，比如Integer.class，Long.class等等
 - disable：是否启动该核查
 以上的属性都是用于匹配的规则，只要满足以上任何一项规则，则称之为匹配成功，即通过核查，否则，如果没有命中任何一个规则，且设定了规则，那么认为匹配失败，即该值就是会被拒绝的。
 

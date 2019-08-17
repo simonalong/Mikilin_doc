@@ -69,7 +69,7 @@ public class RangeEntity1 {
 | yyyy-MM-dd HH:mm:ss.SSS | 年月日时分秒毫秒 |
 
 #### 注意
-1.对于其中的字符，(null, now)这种添加字符也是可以识别的，比如('null', 'now')，past和future一样
-2.对于时间的范围，如果起点比终点大则会解析失败
+- 1.对于其中的字符，(null, now)这种添加字符也是可以识别的，比如('null', 'now')，past和future一样
+- 2.对于时间的范围，如果起点比终点大则会解析失败
 
 

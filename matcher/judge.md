@@ -131,7 +131,7 @@ public class JudgeCheck {
 ```
 
 ### 2.用户自定义匹配器spring方式
-对于业务系统中，对于常见的spring方式加载的Bean，我们这里也做了适配，可以将用户的匹配器作为一个Bean存在，不过需要多做一次处理，需要在对应的位置配置下扫描指定的路径：
+对于业务系统中，通常使用spring方式加载的Bean，我们这里也做了适配，可以将用户的匹配器作为一个Bean存在，不过需要多做一次处理，需要在业务对应的位置配置下扫描指定的路径：
 ```java
 @ComponentScan(value = "com.simonalong.mikilin.util")
 ```
@@ -140,6 +140,10 @@ public class JudgeCheck {
 @Service
 public class JudgeCls {
 
+    // 该引用只是举例
+    @Autowire
+    private UserSevice userSevice;
+    
     /**
      * 年龄是否合法
      */

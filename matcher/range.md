@@ -159,7 +159,7 @@ public class RangeTimeEntity {
 }
 ```
 
-##### 集合的范围
+### 集合类型
 集合这里只核查集合的数据大小
 ```java
 @Data

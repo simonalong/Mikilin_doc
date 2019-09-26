@@ -8,10 +8,10 @@
 使用方式比如：
 
 ```java
-@FieldWhiteMatcher(model = FieldType.FIXED_PHONE)
+@WhiteMatcher(model = FieldType.FIXED_PHONE)
 private String fixedPhone;
 
-@FieldBlackMatcher(model = FieldType.FIXED_PHONE)
+@BlackMatcher(model = FieldType.FIXED_PHONE)
 private String fixedPhoneInValid;
 ```
 

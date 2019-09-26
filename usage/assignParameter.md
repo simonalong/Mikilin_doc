@@ -7,11 +7,11 @@
 @Accessors(chain = true)
 public class TestEntity {
 
-    @FieldBlackMatcher({"nihao", "ok"})
+    @BlackMatcher({"nihao", "ok"})
     private String name;
-    @FieldWhiteMatcher(range = "[12, 32]")
+    @WhiteMatcher(range = "[12, 32]")
     private Integer age;
-    @FieldWhiteMatcher({"beijing", "shanghai"})
+    @WhiteMatcher({"beijing", "shanghai"})
     private String address;
 }
 ```

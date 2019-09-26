@@ -2,10 +2,10 @@
 用于表示只要的或者不要的值列表，一般用于`String`，`Integer`（会自动转成`Integer`），该属性用于表示修饰的属性对应的值，比如
 
 ```java
-@FieldWhiteMatcher({"a", "b", "c", "null"})
+@WhiteMatcher({"a", "b", "c", "null"})
 private String name;
 
-@FieldWhiteMatcher({"12", "32", "29"})
+@WhiteMatcher({"12", "32", "29"})
 private Integer age;
 ```
 

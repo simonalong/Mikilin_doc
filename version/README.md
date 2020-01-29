@@ -1,5 +1,6 @@
 # 六、版本记录
 ###v1.4.3
+
 1.添加集合的大小的判断<br />
 2.匹配器名字的修改<br />
 3.注解名字修改
@@ -7,6 +8,7 @@
 - FieldBlackMatcher 改为 BlackMatcher
 - FieldWhiteMatchers 改为 WhiteMatchers
 - FieldBlackMatchers 改为 BlackMatchers
+
 4.增加单个错误信息的展示<br />
 
 ---

@@ -1,8 +1,12 @@
 # 六、版本记录
-### v1.4.3
+###v1.4.3
 1.添加集合的大小的判断<br />
 2.匹配器名字的修改<br />
-3.注解名字修改<br />
+3.注解名字修改
+- FieldWhiteMatcher 改为 WhiteMatcher
+- FieldBlackMatcher 改为 BlackMatcher
+- FieldWhiteMatchers 改为 WhiteMatchers
+- FieldBlackMatchers 改为 BlackMatchers
 4.增加单个错误信息的展示<br />
 
 ---
@@ -16,8 +20,9 @@
 5.新增异常类<br />
 6.新增核查上下文，将核查的异常的信息添加到上下文<br />
 7.新增用户自定义核查失败时候的异常填写<br />
+
 #### 修复
-1.range中时间范围，匹配的是非整数则会失败<br />
+1.range中时间范围，匹配的是非整数则会失败
 
 ---
 

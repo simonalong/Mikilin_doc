@@ -6,14 +6,14 @@ class全路径#函数名，比如：com.xxx.AEntity#isValid
 ```
 
 ##### 注意:
-核查函数，比如isValid的参数可以为如下这么
+核查函数，比如函数isValid，则该函数的参数可以为如下这么几种
 - 一个参数：则该参数为当前核查的属性类型
 - 两个参数：这种有两种
-    1. 参数1：参数所在的类的类型；参数2：该参数的类型
-    2. 参数1：该参数的类型；参数2：MkContext上下文（MkContext用于匹配后匹配信息的打印）
-- 三个参数：参数1：参数所在类的类型；参数2：该参数的类型，参数3：MkContext上下文
+    - 1. 参数1：属性所在的类的类型；参数2：该属性的类型
+    - 2. 参数1：该属性的类型；参数2：MkContext上下文（MkContext用于匹配后匹配信息的打印）
+- 三个参数：参数1：属性所在类的类型；参数2：该属性的类型，参数3：MkContext上下文
 
-除了以上三种之外，其他的核查参数都是会上报相关的异常的，其中MkContext始终是放到最后的。
+除了以上三种之外，其他的核查参数都是会上报相关的异常的，其中可以发现如果有MkContext，则MkContext始终是放到最后的。
 
 #### 用例：
 
@@ -22,28 +22,28 @@ class全路径#函数名，比如：com.xxx.AEntity#isValid
 @Accessors(chain = true)
 public class JudgeEntity {
 
-    @FieldWhiteMatcher(judge = "com.simonalong.mikilin.judge.JudgeCheck#ageValid")
+    @WhiteMatcher(judge = "com.simonalong.mikilin.judge.JudgeCheck#ageValid")
     private Integer age;
 
-    @FieldWhiteMatcher(judge = "com.simonalong.mikilin.judge.JudgeCheck#nameValid")
+    @WhiteMatcher(judge = "com.simonalong.mikilin.judge.JudgeCheck#nameValid")
     private String name;
 
-    @FieldBlackMatcher(judge = "com.simonalong.mikilin.judge.JudgeCheck#addressInvalid")
+    @BlackMatcher(judge = "com.simonalong.mikilin.judge.JudgeCheck#addressInvalid")
     private String address;
 
-    @FieldWhiteMatcher(judge = "com.simonalong.mikilin.judge.JudgeCheck#ratioJudge")
+    @WhiteMatcher(judge = "com.simonalong.mikilin.judge.JudgeCheck#ratioJudge")
     private Float mRatio;
 
     private Float nRatio;
 
-    @FieldWhiteMatcher(judge = "com.simonalong.mikilin.judge.JudgeCheck#twoParam")
+    @WhiteMatcher(judge = "com.simonalong.mikilin.judge.JudgeCheck#twoParam")
     private String twoPa;
 
-    @FieldWhiteMatcher(judge = "com.simonalong.mikilin.judge.JudgeCheck#threeParam")
+    @WhiteMatcher(judge = "com.simonalong.mikilin.judge.JudgeCheck#threeParam")
     private String threePa;
 }
 ```
-对于用户自定义的匹配类，这里分为两种，一种就是普通的类非Spring，如下，这种在处理上面的判决的时候，会进行单例化，对于spring的方式，则可以采用Bean的方式，下面进行介绍
+对于用户自定义的匹配类，这里分为两种，一种就是普通的类非Spring，如下，这种在处理上面的判决的时候，框架会对其进行单例化，对于spring的方式，则可以采用Bean的方式，这样框架就会采用spring的bean单例，下面进行介绍
 ### 1.用户自定义回调非spring
 
 其中系统的匹配判决函数
@@ -131,7 +131,7 @@ public class JudgeCheck {
 ```
 
 ### 2.用户自定义匹配器spring方式
-对于业务系统中，对于常见的spring方式加载的Bean，我们这里也做了适配，可以将用户的匹配器作为一个Bean存在，不过需要多做一次处理，需要在对应的位置配置下扫描指定的路径：
+对于业务系统中，通常使用spring方式加载的Bean，我们这里也做了适配，可以将用户的匹配器作为一个Bean存在，不过需要多做一次处理，需要在业务对应的位置配置下扫描指定的路径：
 ```java
 @ComponentScan(value = "com.simonalong.mikilin.util")
 ```
@@ -140,6 +140,10 @@ public class JudgeCheck {
 @Service
 public class JudgeCls {
 
+    // 该引用只是举例
+    @Autowire
+    private UserSevice userSevice;
+    
     /**
      * 年龄是否合法
      */

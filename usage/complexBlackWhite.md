@@ -19,7 +19,7 @@ public class WhiteCEntity {
 public class
 CEntity {
 
-    @FieldWhiteMatcher({"a", "b"})
+    @WhiteMatcher({"a", "b"})
     private String name;
     @Check
     private List<BEntity> bEntities;

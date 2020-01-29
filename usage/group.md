@@ -7,17 +7,17 @@
 @Accessors(chain = true)
 public class GroupMultiEntity {
 
-    @FieldBlackMatchers({
-        @FieldBlackMatcher(range = "[10, 20)"),
-        @FieldBlackMatcher(group = "test0", range = "[70, 80)"),
-        @FieldBlackMatcher(group = {"test1","test2"}, range = "[20, 30)"),
-        @FieldBlackMatcher(group = {MkConstant.DEFAULT_GROUP,"test3"}, range = "[30, 40)"),
+    @BlackMatchers({
+        @BlackMatcher(range = "[10, 20)"),
+        @BlackMatcher(group = "test0", range = "[70, 80)"),
+        @BlackMatcher(group = {"test1","test2"}, range = "[20, 30)"),
+        @BlackMatcher(group = {MkConstant.DEFAULT_GROUP,"test3"}, range = "[30, 40)"),
     })
     private Integer age;
 
-    @FieldWhiteMatchers({
-        @FieldWhiteMatcher(value = {"hangzhou", "guangzhou"}),
-        @FieldWhiteMatcher(group = {"test2", "test3"}, value = {"beijing", "shanghai"}),
+    @WhiteMatchers({
+        @WhiteMatcher(value = {"hangzhou", "guangzhou"}),
+        @WhiteMatcher(group = {"test2", "test3"}, value = {"beijing", "shanghai"}),
     })
     private String name;
 }

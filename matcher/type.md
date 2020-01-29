@@ -5,16 +5,16 @@
 @Accessors(chain = true)
 public class TypeEntity {
 
-    @FieldWhiteMatcher(type = Integer.class)
+    @WhiteMatcher(type = Integer.class)
     private Integer data;
 
-    @FieldWhiteMatcher(type = CharSequence.class)
+    @WhiteMatcher(type = CharSequence.class)
     private String name;
 
-    @FieldWhiteMatcher(type = {Integer.class, Float.class})
+    @WhiteMatcher(type = {Integer.class, Float.class})
     private Object obj;
 
-    @FieldWhiteMatcher(type = Number.class)
+    @WhiteMatcher(type = Number.class)
     private Object num;
 }
 ```

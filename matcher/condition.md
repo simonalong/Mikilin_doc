@@ -35,13 +35,13 @@
 @Accessors(chain = true)
 public class ConditionEntity1 {
 
-    @FieldWhiteMatcher(condition = "#current + #root.num2 > 100")
+    @WhiteMatcher(condition = "#current + #root.num2 > 100")
     private Integer num1;
 
-    @FieldWhiteMatcher(condition = "#current < 20")
+    @WhiteMatcher(condition = "#current < 20")
     private Integer num2;
 
-    @FieldWhiteMatcher(condition = "(++#current) >31")
+    @WhiteMatcher(condition = "(++#current) >31")
     private Integer num3;
 }
 ```
@@ -51,7 +51,7 @@ public class ConditionEntity1 {
 @Accessors(chain = true)
 public class ConditionEntity2 {
 
-    @FieldWhiteMatcher(condition = "#root.judge")
+    @WhiteMatcher(condition = "#root.judge")
     private Integer age;
 
     private Boolean judge;
@@ -63,7 +63,7 @@ public class ConditionEntity2 {
 @Accessors(chain = true)
 public class ConditionEntity3 {
 
-    @FieldWhiteMatcher(condition = "min(#current, #root.num2) > #root.num3")
+    @WhiteMatcher(condition = "min(#current, #root.num2) > #root.num3")
     private Integer num1;
     private Integer num2;
     private Integer num3;

@@ -1,15 +1,15 @@
 # ​二、匹配器
 
-这里是将注解的属性作为匹配器，只要配置了这个属性，那么就相当于启用了这个匹配器，匹配器可以有多个，只要匹配上任何一个，那么就算匹配上。注解 `@FieldWhiteMatcher` 或者`@FieldBlackMatcher`中的属性进行用法介绍。
+这里是将注解的属性作为匹配器，只要配置了这个属性，那么就相当于启用了这个匹配器，匹配器可以有多个，只要匹配上任何一个，那么就算匹配上。注解 `@WhiteMatcher` 或者`@BlackMatcher`中的属性进行用法介绍。
 
 ```java
-@Repeatable(FieldWhiteMatchers.class)
+@Repeatable(WhiteMatchers.class)
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface FieldWhiteMatcher {
+public @interface WhiteMatcher {
 
     /**
-     * 针对不同场景下所需的匹配模式的不同，默认"_default_"，详见{@link MkConstant#DEFAULT_GROUP}
+     * 针对不同场景下所需的匹配模式的不同，默认"_default_"，详见{@link com.simonalong.mikilin.MkConstant#DEFAULT_GROUP}
      * @return 分组
      */
     String[] group() default {MkConstant.DEFAULT_GROUP};

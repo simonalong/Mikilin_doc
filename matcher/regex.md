@@ -13,10 +13,10 @@
 @Accessors(chain = true)
 public class RegexEntity {
 
-    @FieldWhiteMatcher(regex = "^\\d+$")
+    @WhiteMatcher(regex = "^\\d+$")
     private String regexValid;
 
-    @FieldBlackMatcher(regex = "^\\d+$")
+    @BlackMatcher(regex = "^\\d+$")
     private String regexInValid;
 }
 ```

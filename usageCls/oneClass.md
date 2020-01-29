@@ -13,6 +13,12 @@ public boolean check(String group, Object object) {}
 
 // 分组核查对象的具体属性
 public boolean check(String group, Object object, String... fieldSet) {}
+
+// 核查失败抛异常
+public void checkWithException(Object object) throws MkCheckException;
+public void checkWithException(Object object, String ...fieldSet) throws MkCheckException;
+public void checkWithException(String group, Object object) throws MkCheckException;
+public void checkWithException(String group, Object object, String ...fieldSet) throws MkCheckException;
 ```
 
 

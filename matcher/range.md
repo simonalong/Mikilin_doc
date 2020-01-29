@@ -10,9 +10,13 @@
 | (a, b] | 表示数字>a且<=b |
 | (a, b) | 表示数字>a且<b |
 | (null, b] | 表示数字<=b |
+| (, b] | 表示数字<=b |
 | (null, b) | 表示数字<b |
+| (, b) | 表示数字<b |
 | [a, null) | 表示数字>=a |
+| [a,) | 表示数字>=a |
 | (a, null) | 表示数字>a |
+| (a,) | 表示数字>a |
 
 #### 例子：
 
@@ -30,6 +34,22 @@ public class RangeEntity1 {
 
     @FieldWhiteMatcher(range = "[0, 100]")
     private Integer age2;
+    
+    /**
+     * 属性为大于等于100
+     * @since 1.4.4
+     */
+    @WhiteMatcher(range = "(100, )")
+    private Integer num1;
+
+    @WhiteMatcher(range = "[100,)")
+    private Integer num2;
+
+    @WhiteMatcher(range = "(, 50)")
+    private Integer num3;
+
+    @WhiteMatcher(range = "(,50]")
+    private Integer num4;
 }
 ```
 ### 时间类型
